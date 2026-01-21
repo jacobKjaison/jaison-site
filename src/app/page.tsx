@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -8,7 +10,9 @@ export default function Home() {
      
     <main className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
       {/* Hero */}
-      <section className="space-y-6">
+      <section className="grid gap-8 md:grid-cols-[1fr_280px] items-start">
+
+      <div className="space-y-6">
         <p className="text-sm text-neutral-500">
           Dubai, UAE • CTO-in-Transition • Digital Transformation Leader
         </p>
@@ -67,6 +71,19 @@ export default function Home() {
               {t}
             </span>
           ))}
+        </div>
+
+        {/* RIGHT: Profile Image */}
+        <div className="relative mx-auto w-48 md:w-64">
+          <div className="relative aspect-square overflow-hidden rounded-2xl border border-neutral-200">
+            <Image
+              src="/JaisonJ.jpg"
+              alt="Jaison Jacob - CTO and Digital Transformation Leader"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </section>
 
