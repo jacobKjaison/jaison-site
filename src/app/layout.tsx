@@ -15,13 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jaison Jacob | CTO-in-Transition",
+  title: "Jaison Jacob | CTO-in-Transition | Digital Transformation Leader",
   description:
     "Technology and program leader driving digital transformation across AI, ERP, cloud platforms, and enterprise delivery.",
+   keywords: [
+    "Jaison Jacob",
+    "CTO",
+    "Digital Transformation",
+    "AI Strategy",
+    "ERP",
+    "Program Management",
+    "Project Management",
+    "Portfolio Management",
+    "Technology Leader",
+    "Dubai CTO"
+  ],
   openGraph: {
     title: "Jaison Jacob | CTO-in-Transition",
     description:
       "Technology and program leader driving digital transformation across AI, ERP, cloud platforms, and enterprise delivery.",
+    url: "https://jacobjaison.com",
+    siteName: "Jaison Jacob",
+    locale: "en_US",
     type: "website",
   },
 };
