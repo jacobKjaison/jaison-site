@@ -13,6 +13,7 @@ export default function Nav() {
         <nav className="flex items-center gap-6 text-sm text-neutral-600">
           <a className="hover:text-neutral-900" href="/about">About</a>
           <a className="hover:text-neutral-900" href="/experience">Experience</a>
+          <a className="hover:text-neutral-900 transition" href="/blog">Blog</a>
           <a className="hover:text-neutral-900" href="/contact">Contact</a>
 
           {/* Optional external link */}

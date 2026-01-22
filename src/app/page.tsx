@@ -11,7 +11,7 @@ export default function Home() {
     <main className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
       {/* Hero */}
       <section className="grid gap-8 md:grid-cols-[1fr_280px] items-start">
-      
+      /*Left */
       <div className="space-y-6">
         <p className="text-sm text-neutral-500">
           Dubai, UAE • CTO-in-Transition • Digital Transformation Leader
@@ -103,7 +103,7 @@ export default function Home() {
               What I do
             </h2>
             <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-              Executive-grade capabilities, written for hiring leaders.
+              Executive-grade capabilities.
             </p>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function Home() {
           Featured outcomes
         </h2>
         <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-          Replace these with your strongest quantified wins (I can rewrite them in CTO tone).
+          Quantified wins ).
         </p>
 
         <div className="mt-6 grid gap-4">
