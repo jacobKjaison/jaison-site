@@ -11,7 +11,7 @@ export default function Home() {
     <main className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
       {/* Hero */}
       <section className="grid gap-8 md:grid-cols-[1fr_280px] items-start">
-      /*Left */
+      
       <div className="space-y-6">
         <p className="text-sm text-neutral-500">
           Dubai, UAE • CTO-in-Transition • Digital Transformation Leader
