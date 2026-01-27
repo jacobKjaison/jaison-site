@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import ReactMarkdown from "react-markdown";
 
 export const dynamicParams = false;
 
@@ -37,13 +38,10 @@ export default async function BlogPostPage({ params }: PageProps) {
       ) : null}
 
       <article className="prose prose-neutral mt-10 max-w-none">
-        {post.content
-          .split("\n")
-          .filter(Boolean)
-          .map((line, idx) => (
-            <p key={idx}>{line}</p>
-          ))}
-      </article>
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+      </article> 
+
+      
     </main>
   );
 }
