@@ -2,12 +2,18 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function BlogPostPage({ params }: PageProps) {
+  const { slug } = await params;
 
   let post;
   try {
@@ -30,7 +36,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       ) : null}
 
-      {/* Basic markdown rendering (we can upgrade this next) */}
       <article className="prose prose-neutral mt-10 max-w-none">
         {post.content
           .split("\n")
