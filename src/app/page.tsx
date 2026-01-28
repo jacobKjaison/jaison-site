@@ -209,13 +209,13 @@ export default function Home() {
         <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5">
           <div className="grid gap-2 text-sm">
             <a className="font-semibold hover:underline" href="mailto:jacob.jaison@hotmail.com">
-              Email : jacob.jaison@hotmail.com
+              Email     : jacob.jaison@hotmail.com
             </a>
             <a className="font-semibold hover:underline" href="https://www.linkedin.com/in/jaisonkjacob/" target="_blank" rel="noreferrer">
-              LinkedIn : Jaison Jacob
+              LinkedIn  : Linkedin/jaisonkjacob
             </a>
-            <a className="font-semibold hover:underline" href="https://github.com/jacobKjaison" target="_blank" rel="noreferrer">
-              GitHub : JaisonkJacob
+            <a className="font-semibold hover:underline" href="https://github.com/jacobjaison" target="_blank" rel="noreferrer">
+              GitHub    : github/jacobjaison
             </a>
           </div>
         </div>
