@@ -9,13 +9,13 @@ export default function Contact() {
       <div className="mt-8 max-w-xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
         <div className="grid gap-2 text-sm">
           <a className="font-semibold hover:underline" href="mailto:your.email@example.com">
-            your.email@example.com
+            Email : jacob.jaison@hotmail.com
           </a>
-          <a className="font-semibold hover:underline" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-            LinkedIn
+          <a className="font-semibold hover:underline" href="https://www.linkedin.com/in/jaisonkjacob/" target="_blank" rel="noreferrer">
+            LinkedIn : Jaison Jacob
           </a>
           <a className="font-semibold hover:underline" href="https://github.com/jacobjaison" target="_blank" rel="noreferrer">
-            GitHub
+            GitHub : JacobJaison
           </a>
         </div>
       </div>
