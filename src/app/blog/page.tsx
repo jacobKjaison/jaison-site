@@ -12,7 +12,7 @@ export default function BlogPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-      <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Blog</h1>
+      <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Insights</h1>
       <p className="mt-2 text-neutral-600">
         Writing about digital transformation, AI strategy, ERP, and CTO leadership execution.
       </p>
