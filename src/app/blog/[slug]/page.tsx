@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
-import ReactMarkdown from "react-markdown";
+import MarkdownContent from "@/components/MarkdownContent";
 
 export const dynamicParams = false;
 
@@ -37,9 +37,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       ) : null}
 
-      <article className="prose prose-neutral mt-10 max-w-none">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-      </article> 
+     <MarkdownContent content={post.content} />
 
       
     </main>
