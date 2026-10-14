@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jaison Jacob | CTO-in-Transition | Digital Transformation Leader",
+  title: "Jaison Jacob | Digital Transformation & Delivery Leader",
   description:
     "Technology and program leader driving digital transformation across AI, ERP, cloud platforms, and enterprise delivery.",
    keywords: [
