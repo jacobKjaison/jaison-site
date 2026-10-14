@@ -14,7 +14,7 @@ export default function Home() {
       
       <div className="space-y-6">
         <p className="text-sm text-neutral-500">
-          Dubai, UAE • CTO-in-Transition • Digital Transformation Leader
+          Dubai, UAE • Digital Transformation & Delivery Leader
         </p>
 
         <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl leading-tight">
