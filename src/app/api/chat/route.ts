@@ -43,7 +43,7 @@ Education & Certifications:
 - AI/IoT Patent Holder (CarHealX)
 - Executive Education: INSEAD (Lead by Results), IIM Ahmedabad
 
-Availability: Available immediately. Open to Head of Digital Transformation, Head of IT Delivery, Programme Director, CTO Advisory roles. Open to UAE, GCC, and remote/global roles.
+Availability: Available. Open to Digital Transformation, Delivery, Programme based roles. Open to UAE, GCC and remote/global roles.
 
 Keep answers brief (2–4 sentences max). If asked something you don't know, suggest the visitor email jacob.jaison@hotmail.com directly.`;
 
