@@ -215,7 +215,7 @@ export default function Home() {
           Featured outcomes
         </h2>
         <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-          Quantified wins ).
+          Quantified wins.
         </p>
 
         <div className="mt-6 grid gap-4">
