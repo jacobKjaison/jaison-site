@@ -21,7 +21,7 @@ export default function Contact() {
           },
           {
             label: "LinkedIn",
-            value: "in/jaisonkjacob",
+            value: "Jaison Jacob",
             href: "https://www.linkedin.com/in/jaisonkjacob/",
           },
           {

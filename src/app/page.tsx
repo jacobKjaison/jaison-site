@@ -213,7 +213,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
           {[
             { label: "Email", value: "jacob.jaison@hotmail.com", href: "mailto:jacob.jaison@hotmail.com" },
-            { label: "LinkedIn", value: "in/jaisonkjacob", href: "https://www.linkedin.com/in/jaisonkjacob/" },
+            { label: "LinkedIn", value: "Jaison Jacob", href: "https://www.linkedin.com/in/jaisonkjacob/" },
             { label: "GitHub", value: "github/jacobjaison", href: "https://github.com/jacobjaison" },
           ].map((item) => (
             <a
