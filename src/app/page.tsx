@@ -1,14 +1,85 @@
+"use client";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { useState } from "react";
+
 
 
 export default function Home() {
-  return (
+  const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState(false);
+
+   async function handleResumeSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitting(true);
+    await fetch("https://formspree.io/f/xjygpweg", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ name, email, _subject: "Resume Download Request" }),
+    }).catch(() => {});
+    const link = document.createElement("a");
+    link.href = "/Jaison-Jacob-Resume.pdf";
+    link.download = "Jaison-Jacob-Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setSubmitting(false);
+    setDone(true);
+    setTimeout(() => { setShowModal(false); setDone(false); setName(""); setEmail(""); }, 1500);
+  }
+
+
+ return (
     <>
-     
-    <main className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4" onClick={() => setShowModal(false)}>
+          <div className="relative w-full max-w-md rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-white/10 shadow-2xl p-8" onClick={(e) => e.stopPropagation()}>
+            {done ? (
+              <div className="flex flex-col items-center gap-3 py-4 text-center">
+                <svg className="h-10 w-10 text-green-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+                </svg>
+                <p className="font-semibold text-neutral-900 dark:text-white">Downloading…</p>
+                <p className="text-sm text-neutral-500">Thanks! Your download has started.</p>
+              </div>
+            ) : (
+              <>
+                <button onClick={() => setShowModal(false)} className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-700" aria-label="Close">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">One quick step</p>
+                <h2 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-white mb-1">Download Resume</h2>
+                <p className="text-sm text-neutral-500 mb-6">Enter your details and the PDF will download instantly.</p>
+                <form onSubmit={handleResumeSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-1.5">Your Name</label>
+                    <input type="text" required value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Sarah Ahmed"
+                      className="w-full rounded-xl border border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 px-4 py-3 text-sm text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-1.5">Work Email</label>
+                    <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="e.g. sarah@company.com"
+                      className="w-full rounded-xl border border-neutral-200 dark:border-white/10 bg-neutral-50 dark:bg-white/5 px-4 py-3 text-sm text-neutral-900 dark:text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+                  </div>
+                  <button type="submit" disabled={submitting}
+                    className="w-full rounded-xl bg-neutral-900 dark:bg-white px-5 py-3 text-sm font-semibold text-white dark:text-neutral-900 hover:bg-neutral-700 transition disabled:opacity-60">
+                    {submitting ? "Please wait…" : "Download PDF →"}
+                  </button>
+                </form>
+                <p className="mt-4 text-center text-[11px] text-neutral-400">Your details are kept private and never shared.</p>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+     <main className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
       {/* Hero */}
       <section className="grid gap-8 md:grid-cols-[1fr_280px] items-start">
       
@@ -31,28 +102,26 @@ export default function Home() {
         </p>
 
         <div className="flex flex-wrap gap-3 pt-2">
-          <Link
-            href="#experience"
-            className="rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white hover:bg-neutral-800 transition"
-          >
+         <Link
+           href="#experience"
+           className="rounded-xl border border-neutral-200 bg-white px-5 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white"
+           >
             View Experience
-          </Link>
+            </Link>
 
           <Link
             href="#contact"
-            className="rounded-xl border border-neutral-200 bg-white px-5 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-50 transition dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+            className="rounded-xl border border-neutral-200 bg-white px-5 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white"
           >
-            Contact
+          Contact
           </Link>
 
-          <a
-             href="/Jaison-Jacob-Resume.pdf"
-             className="rounded-xl border border-neutral-200 bg-white px-5 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-50 transition"
-              target="_blank"
-              rel="noreferrer"
+          <button
+            onClick={() => setShowModal(true)}
+            className="rounded-xl border border-neutral-200 bg-white px-5 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition cursor-pointer"
           >
             Download Resume
-          </a>
+          </button>
 
         </div>
 
