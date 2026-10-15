@@ -205,7 +205,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold tracking-tight sm:text-3xl mb-3">
           Let's work together
         </h2>
-        <p className="text-neutral-500 text-sm mb-8 max-w-md">
+        <p className="text-neutral-500 text-sm mb-8 max-w-lg">
           Open to leadership roles, advisory engagements, consulting, or collaboration.
           Based in Dubai, UAE — working globally.
         </p>

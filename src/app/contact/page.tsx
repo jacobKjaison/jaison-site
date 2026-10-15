@@ -7,7 +7,7 @@ export default function Contact() {
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-3">
         Lets work together
       </h1>
-      <p className="text-neutral-500 sm:text-base mb-12 max-w-md">
+      <p className="text-neutral-500 sm:text-base mb-12 max-w-lg">
         Open to leadership roles, advisory engagements, consulting, or collaboration.
         Based in Dubai, UAE — working globally.
       </p>
